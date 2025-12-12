@@ -1,9 +1,166 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Website</title>
-  </head>
-  <body>
-    ZCOER
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modern CSS Web Page</title>
+  <meta name="description" content="A clean, responsive one-page site built with HTML & CSS" />
+  <style>
+    /* Reset / base */
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #6ee7b7;
+      --accent-2: #60a5fa;
+      --glass: rgba(255,255,255,0.04);
+      --radius: 14px;
+      --max-w: 1100px;
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071022);color:#e6eef6}
+    a{color:inherit;text-decoration:none}
+
+    .container{max-width:var(--max-w);margin:0 auto;padding:48px 20px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;font-weight:700}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);font-weight:600;font-size:15px;padding:8px 10px;border-radius:10px}
+    nav a:hover{color:#fff;background:var(--glass)}
+    .cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));padding:10px 16px;border-radius:10px;font-weight:700;color:#012;text-transform:uppercase}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;margin-top:36px}
+    .hero-left h1{font-size:40px;line-height:1.02;margin:0}
+    .hero-left p{color:var(--muted);margin-top:12px;font-size:16px}
+    .buttons{display:flex;gap:12px;margin-top:20px}
+    .btn{padding:12px 18px;border-radius:10px;font-weight:700}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#34d399);color:#042}
+    .btn-ghost{border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted)}
+
+    /* Card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:16px;box-shadow:0 6px 30px rgba(2,6,23,0.6);backdrop-filter: blur(6px)}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .feature{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent)}
+    .feature h3{margin:8px 0 4px}
+    .feature p{color:var(--muted);font-size:14px}
+
+    /* Footer / contact */
+    .contact{display:flex;gap:18px;align-items:center;margin-top:36px}
+    .input{flex:1;padding:12px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    .send{padding:12px 16px;border-radius:10px;background:var(--accent-2);font-weight:700}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:520px){
+      header{flex-direction:column;align-items:flex-start}
+      .features{grid-template-columns:1fr}
+      .logo{width:40px;height:40px}
+      .hero-left h1{font-size:28px}
+    }
+
+    /* Small decorative footer */
+    footer{margin-top:48px;padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
+
+    /* little utility */
+    .muted{color:var(--muted)}
+    .small{font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">W</div>
+        <div>
+          <div style="font-weight:800">WebCraft</div>
+          <div class="small muted">Beautiful CSS-first designs</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#get">Get Started</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Fast, modern webpages built with <span style="color:var(--accent)">pure CSS</span></h1>
+          <p>Create responsive, accessible, and beautiful interfaces without heavy frameworks. Copy this page and customize in minutes.</p>
+          <div class="buttons">
+            <a class="btn btn-primary" href="#get">Try demo</a>
+            <a class="btn btn-ghost" href="#learn">How it works</a>
+          </div>
+
+          <div class="card" style="margin-top:22px">
+            <strong>Live preview</strong>
+            <div class="muted small" style="margin-top:8px">This template uses CSS variables, responsive grid and simple components. Perfect starter for small sites or landing pages.</div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin:0">Get this template</h3>
+          <p class="muted small" style="margin-top:8px">Copy the HTML file, edit text &amp; colors, then host anywhere. No build step needed.</p>
+
+          <div style="display:flex;gap:10px;margin-top:14px">
+            <div style="flex:1">
+              <div class="small muted">Users</div>
+              <div style="font-weight:800;font-size:20px">1,234</div>
+            </div>
+            <div style="flex:1">
+              <div class="small muted">Performance</div>
+              <div style="font-weight:800;font-size:20px">A+</div>
+            </div>
+          </div>
+
+          <a style="display:inline-block;margin-top:16px" class="btn btn-primary" href="#get">Download</a>
+        </aside>
+      </section>
+
+      <section id="features" class="features" aria-label="features">
+        <div class="feature card">
+          <h3>Responsive grid</h3>
+          <p>Layouts that automatically adapt to different screen sizes using CSS Grid and media queries.</p>
+        </div>
+        <div class="feature card">
+          <h3>Design tokens</h3>
+          <p>Colors and radiuses are controlled by CSS variables — change them once and the whole theme updates.</p>
+        </div>
+        <div class="feature card">
+          <h3>Accessible</h3>
+          <p>High contrast, readable font sizes, and clear focus states make this template accessible out of the box.</p>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:30px">
+        <div class="card contact">
+          <div style="flex:1">
+            <strong>Stay in touch</strong>
+            <div class="muted small">Subscribe for updates about templates and components.</div>
+          </div>
+          <input class="input" placeholder="your email" type="email" />
+          <button class="send">Subscribe</button>
+        </div>
+      </section>
+
+      <footer>
+        <div>Made with ❤️ by WebCraft · <span class="muted">Version 1.0</span></div>
+      </footer>
+    </main>
+  </div>
+</body>
 </html>
